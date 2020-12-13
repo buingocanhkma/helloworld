@@ -46,6 +46,20 @@ pipeline {
                 sh "ls -al"
             }
         }
+		
+    stage('Build Tarball') {
+      steps {
+        sh '''BRANCH="$(echo ${GIT_BRANCH} | tr \'/\' \'_\' | cut -d \'_\' -f 2-)"
+TREEISH="$(echo ${GIT_COMMIT} | cut -c 1-6)"
+FN="bachelor-api-v1-b${BUILD_NUMBER}-${BRANCH}@${TREEISH}.tar.xz"
+echo "building ${FN}"
+#build deployable archive:
+export XZ_OPT="-3 -T2"
+tar --exclude-vcs --exclude-vcs-ignores -cJf "/tmp/${FN}" -C "${WORKSPACE}" .
+mv "/tmp/${FN}" .'''
+      }
+    }
+	
     stage('Install Prerequisites') {
       parallel {
         stage('Notify slack') {
