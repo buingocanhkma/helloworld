@@ -18,14 +18,6 @@ pipeline {
     agent {
         label 'master'
     }
-
-    /** environment
-    * ANT_HOME ="C:/apache-ant-1.10.7": Path to Apache Ant
-    * PATH: Add environment variable
-    */
-    environment {
-    }
-
     /** Checkout
     * Get source code from SVN, Git,...
     */
