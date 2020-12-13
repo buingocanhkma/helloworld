@@ -46,8 +46,6 @@ pipeline {
                 sh "ls -al"
             }
         }
-		
-  stages {
     stage('Install Prerequisites') {
       parallel {
         stage('Notify slack') {
@@ -87,8 +85,7 @@ pipeline {
         sh 'yarn run test || true'
       }
     }
-
-  }
+		
     }
 }
 
