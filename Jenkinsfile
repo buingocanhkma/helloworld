@@ -24,9 +24,6 @@ pipeline {
     * PATH: Add environment variable
     */
     environment {
-        JAVA_HOME = "${tool 'jdk-8u221-windows'}"
-        ANT_HOME = "${tool 'ant-1.10.5-windows'}"
-        PATH = "${env.JAVA_HOME}/bin"
     }
 
     /** Checkout
