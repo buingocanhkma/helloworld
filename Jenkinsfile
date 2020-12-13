@@ -1,7 +1,7 @@
 def project_name = "${env.JOB_NAME}".replace("%2F", "/")
 
 pipeline {
-  agent any
+  agent "master"
 
   options {
     buildDiscarder(logRotator(numToKeepStr: '100'))
