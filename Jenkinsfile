@@ -6,7 +6,7 @@
 */
 def project = "helloworld"
 def gitUrl = "https://github.com/buingocanhkma/helloworld.git"
-def branch = "master"
+def branch = "develop"
 def credentialID = "anhbn_github"
 
 
