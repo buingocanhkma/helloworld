@@ -218,8 +218,6 @@ mv "/tmp/${FN}" .'''
         livingDocs(featuresDir:'junit')
       }
     }
-  }
-
 
 }
 
