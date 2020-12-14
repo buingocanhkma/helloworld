@@ -208,16 +208,5 @@ mv "/tmp/${FN}" .'''
       }
     }
 
-    stage('Testing Cleanup') {
-      environment {
-        TESTDB_CRED = credentials('dlsgmaria-maint-user')
-      }
-      steps {
-        sh './scripts/ci/drop-temp-dbs.sh 14'
-        archiveArtifacts(artifacts: 'storage/logs/*', fingerprint: true)
-        livingDocs(featuresDir:'junit')
-      }
-    }
-
 }
 
