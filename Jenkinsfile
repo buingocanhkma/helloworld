@@ -51,7 +51,7 @@ pipeline {
       steps {
         sh '''BRANCH="$(echo ${GIT_BRANCH} | tr \'/\' \'_\' | cut -d \'_\' -f 2-)"
 TREEISH="$(echo ${GIT_COMMIT} | cut -c 1-6)"
-FN="helloworld-v1-b${BUILD_NUMBER}-${BRANCH}@${TREEISH}.tar.xz"
+FN="bachelor-hello-v1-b${BUILD_NUMBER}-${BRANCH}@${TREEISH}.tar.xz"
 echo "building ${FN}"
 #build deployable archive:
 export XZ_OPT="-3 -T2"
